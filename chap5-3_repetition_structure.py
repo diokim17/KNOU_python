@@ -1,3 +1,4 @@
+'''
 # "저는 파이썬을 잘 다룰 수 있습니다" 를 5번 출력하시오.
 sentence = "저는 파이썬을 잘 다룰 수 있습니다."
 i = 1  # 반복이 될지 말지 결정하는 변수: 감시 값, 감시자, sentinel
@@ -73,3 +74,49 @@ for height in height_list:
     area = radius ** 2 * 3.14 + radius * 2 * 3.14 * height
     volume = radius ** 2 * 3.14 * height
     print("겉넓이는", area, "이고", "부피는", volume)
+
+
+# 조건 제어 반복으로 5번 출력한 sentence를 계수 제어 반복으로 5번 출력하기
+
+sentence = "저는 파이썬을 잘 다룰 수 있습니다."
+range_list = range(1,6,1) # 마지막 범위보다 크기만 하면 됨
+
+for i in range(1,6,1):
+    print(sentence)
+    
+print("-----")
+
+for i in range_list:
+    print(sentence)
+    
+# 위의 두 결과 모두 동일함
+
+print("-------")
+
+# 반지름과 높이가 (10,1) , (20,5), (30,14)인 원뿔의 부피와 겉넓이를 각각 출력하기
+height_list = [1,5,14]
+radius_list = range(10,31,10)
+
+for r, h in zip(radius_list, height_list):
+    print("반지름이", r,"이고 높이가", h,"인 부피는",1/3 * 3.14 * r ** 2 * h)
+    print("반지름이", r,"이고 높이가", h,"인 겉넓이는",3.14 * r ** 2 + 3.14 * r * h)
+
+print("-------")
+
+# 구구단 출력하기
+time_table = int(input("단 수를 입력하세요: "))
+multi_list = range(1,10) # 커지는 값이 1인 경우 생략 가능
+
+print(time_table,"단")
+for n in multi_list:
+    print(time_table, "x", n, "=", time_table * n)
+'''
+# 1단부터 9단까지 전체 표 출력하기
+multi_list = range(1,10)
+
+for time in multi_list:
+    print(time)
+    print("---")
+    for multi in multi_list:
+        print(multi, end=" ")
+        print("|", time * multi, end=" " )
