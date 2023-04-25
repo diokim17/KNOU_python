@@ -1,4 +1,3 @@
-'''
 # "저는 파이썬을 잘 다룰 수 있습니다" 를 5번 출력하시오.
 sentence = "저는 파이썬을 잘 다룰 수 있습니다."
 i = 1  # 반복이 될지 말지 결정하는 변수: 감시 값, 감시자, sentinel
@@ -110,9 +109,13 @@ multi_list = range(1,10) # 커지는 값이 1인 경우 생략 가능
 print(time_table,"단")
 for n in multi_list:
     print(time_table, "x", n, "=", time_table * n)
+
 '''
+format 배우기 전 print만으로 출력해보기
+
 # 1단부터 9단까지 전체 표 출력하기
 multi_list = range(1,10)
+print(" 구구단표 ")
 
 for time in multi_list:
     print(time)
@@ -120,3 +123,29 @@ for time in multi_list:
     for multi in multi_list:
         print(multi, end=" ")
         print("|", time * multi, end=" " )
+        
+'''
+        
+# print 함수만으로는 정갈한 구구단 표 출력하기 힘듦. 따라서 format 함수 활용
+
+# format 함수
+# 데이터를 양식에 맞춰 형식화
+
+print(format("구구단표",">15s"))
+
+# 표 머리 출력
+print("  |", end="")
+for i in range(1,10):
+    print(" ",i,end="")
+    
+# 새로운 행 삽입
+print()
+print("-------------------------------")
+
+# 구구단 출력
+for j in range(1,10):  # 단수 반복
+    print(j,"|",end="")
+    for k in range(1,10):  # 하나의 단의 곱셈 부분
+        print(format(j*k,">3d"),end="") # format의 활용!!!!!
+    print()
+    
